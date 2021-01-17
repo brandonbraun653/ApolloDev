@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "OpenOCD MLO BeagleBone Black",
+      "type": "shell",
+      "command": "${workspaceFolder}/lib/CommonTools/openocd/bin/openocd",
+      "args": [
+        "--search",
+        "${workspaceFolder}/lib/CommonTools/openocd/scripts",
+        "--search",
+        "${workspaceFolder}/lib/CommonTools/openocd",
+        "--search",
+        "${workspaceFolder}/Apollo/tools/openocd",
+        "--file",
+        "${workspaceFolder}/lib/CommonTools/openocd/scripts/interface/jlink.cfg",
+        "--file",
+        "${workspaceFolder}/Apollo/tools/openocd/board/beaglebone_black_mlo.cfg"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
