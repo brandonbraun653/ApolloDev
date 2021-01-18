@@ -12,3 +12,7 @@ set(CMAKE_CXX_EXTENSIONS ON)
 # ====================================================
 include("lib/CommonTools/cmake/options/common.cmake")
 add_subdirectory("${COMMON_TOOL_ROOT}/cmake/device/am335x" ${PROJECT_BINARY_DIR}/DeviceTarget)
+
+
+
+add_subdirectory(test/bringup/jtag_loader)

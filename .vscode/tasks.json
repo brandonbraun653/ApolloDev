@@ -18,6 +18,18 @@
         "${workspaceFolder}/Apollo/tools/openocd/board/beaglebone_black_mlo.cfg"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "Start JLink GDB Server",
+      "type": "shell",
+      "command": "JLinkGDBServer",
+      "args": [
+        "-device",
+        "AM3358",
+        "-JLinkScriptFile",
+        "${workspaceFolder}/lib/CommonTools/jlink/am335x/bbb_ram_init.JLinkScript"
+      ],
+      "problemMatcher": []
     }
   ]
 }
