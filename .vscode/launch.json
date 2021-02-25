@@ -5,16 +5,22 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "BBB MLO Debug (JLink)",
       "type": "gdb",
       "request": "attach",
-      "name": "BBB MLO Debug",
-      "target": "extended-remote localhost:2331",
-      "executable": "${workspaceFolder}/artifacts/last_build_version/led_on.elf",
+      "remote": true,
+      "target": "localhost:2331",
+      "executable": "${workspaceFolder}/artifacts/last_build_version/ApolloMLO.elf",
       "cwd": "${workspaceRoot}",
       "autorun": [
+        "file ./artifacts/last_build_version/ApolloMLO.elf",
         "monitor halt",
         "monitor reset",
-        "monitor halt"
+        "monitor halt",
+        "monitor clrbp",
+        "load",
+        "monitor halt",
+        "break _mlo_startup_entry"
       ]
     },
   ]
