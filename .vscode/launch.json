@@ -12,6 +12,7 @@
       "target": "localhost:2331",
       "executable": "${workspaceFolder}/artifacts/last_build_version/ApolloMLO.elf",
       "cwd": "${workspaceRoot}",
+      "gdbpath": "${workspaceRoot}/lib/CommonTools/gcc/arm-none-eabi-gdb",
       "autorun": [
         "file ./artifacts/last_build_version/ApolloMLO.elf",
         "monitor halt",
@@ -19,8 +20,9 @@
         "monitor halt",
         "monitor clrbp",
         "load",
-        "monitor halt",
-        "break _mlo_startup_entry"
+        "monitor reg sp = 0x4030B800",
+        "monitor reg pc = 0x402f0400",
+        "break _reset_handler"
       ]
     },
   ]
